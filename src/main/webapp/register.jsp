@@ -11,8 +11,8 @@
   <title>Cadastro</title>
 
   <link rel="stylesheet" type="text/css" href="assets/libraries/semantic/semantic.min.css">
-  <script src="assets/libraries/semantic/semantic.min.js"></script>
   <script src="assets/libraries/jquery.min.js"></script>
+  <script src="assets/libraries/semantic/semantic.min.js"></script>
 
   <style type="text/css">
     body {
