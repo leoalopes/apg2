@@ -62,16 +62,23 @@
 <body>
 
   <div class="ui sidebar inverted vertical menu">
-    <h2 class="ui center aligned header" style="margin-top: 10px; color: #1BE3FD">Filtros</h1>
-    <a class="item">
-      1
-    </a>
-    <a class="item">
-      2
-    </a>
-    <a class="item">
-      3
-    </a>
+    <h2 class="ui center aligned header" style="margin-top: 10px; color: #1BE3FD">Filtros</h1><br>
+    <div class="item">
+      <div style="color: #1EB3FD" class="ui center aligned">Endereço</div><br>
+      <div class="ui input">
+        <input type="text">
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui input" style="display: flex; align-items: center;">
+        <span style="color: #1eb3fd">Preço mínimo</span> <input type="number" value="250" placeholder="R$">
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui input" style="display: flex; align-items: center;">
+        <span style="color: #1eb3fd">Preço máximo</span> <input type="number" value="5000" placeholder="R$">
+      </div>
+    </div>
   </div>
   <div class="dimmed pusher">
     <div class="ui fixed inverted first menu">
@@ -90,12 +97,12 @@
     </div>
 
     <div class="container">
-      <h1 class="ui center aligned header">Explore os imóveis próximos de você</h1>
+      <h1 class="ui center aligned header">Explore imóveis próximos de você</h1>
 
       <div class="grid">
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -113,7 +120,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -131,7 +138,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -149,7 +156,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -167,7 +174,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -185,7 +192,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
@@ -203,7 +210,7 @@
         </div>
 
         <div class="location" style="width: 220px">
-          <div class="ui card">
+          <div class="ui link card">
             <div class="image">
               <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
             </div>
