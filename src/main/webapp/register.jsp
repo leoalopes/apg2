@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Standard Meta -->
@@ -16,7 +17,7 @@
 
   <style type="text/css">
     body {
-      background-color: #151517;
+      background-color: #FFFFFF;
     }
     body > .grid {
       height: 100%;
@@ -30,6 +31,13 @@
   </style>
 </head>
 <body>
+    <div class="ui fixed inverted first menu">
+      <div class="item">
+      </div>
+      <a href="home" class="item">
+        Imobiliária
+      </a>
+    </div>
     <div class="ui middle aligned center aligned grid">
     <div class="column">
         <h2 class="ui image header" style="color: #1EB3FD">
@@ -37,42 +45,38 @@
                 Cadastrar nova conta
             </div>
         </h2>
-        <form class="ui large form">
+        <form class="ui large form" action="registerAction" method="post">
         <div class="ui stacked segment">
             <div class="field">
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="name" placeholder="Nome">
+                    <input type="text" name="name" placeholder="Nome" />
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="envelope icon"></i>
-                    <input type="text" name="email" placeholder="E-mail">
+                    <input type="email" name="email" placeholder="E-mail" />
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Senha">
+                    <input type="password" name="password" placeholder="Senha" />
                 </div>
             </div>
-            <div class="field">
+            <%-- <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
                     <input type="password" name="password" placeholder="Confirmar senha">
                 </div>
-            </div>
-            <a href="home"><div class="ui fluid large submit button" style="background-color: #1EB3FD; color: white">Cadastrar</div></a>
+            </div> --%>
+            <button class="ui fluid large submit button" type="submit" style="background-color: #1EB3FD; color: white">Cadastrar</button>
         </div>
 
         <div class="ui error message"></div>
 
         </form>
-
-        <div class="ui message">
-        Já possui uma conta?  <a href="login">Entrar</a>
-        </div>
     </div>
     </div>
 </body>
