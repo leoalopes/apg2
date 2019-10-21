@@ -17,7 +17,7 @@
 
   <style type="text/css">
     body {
-      background-color: #FFFFFF;
+      background-color: #EEEEEE;
     }
     body > .grid {
       height: 100%;
@@ -28,8 +28,31 @@
     .column {
       max-width: 450px;
     }
+
+    .errorMessage {
+      padding: 0 !important;
+      color: #9F3A38 !important;
+    }
   </style>
 </head>
+
+<script>
+function validateForm() {
+  let password = document.querySelector('#password')
+  let confirmPassword = document.querySelector('#confirmPassword')
+  if(password.value != confirmPassword.value) {
+    password.parentElement.parentElement.classList.add('error')
+    confirmPassword.parentElement.parentElement.classList.add('error')
+    return false
+  }
+}
+
+window.onload = function() {
+  document.querySelector('#name').value = '<s:property value="name"/>'
+  document.querySelector('#email').value = '<s:property value="email"/>'
+}
+</script>
+
 <body>
     <div class="ui fixed inverted first menu">
       <div class="item">
@@ -45,39 +68,39 @@
                 Cadastrar nova conta
             </div>
         </h2>
-        <form class="ui large form" action="registerAction" method="post">
+        <form id="#form" class="ui large form" action="registerAction" method="post" onsubmit="return validateForm()">
         <div class="ui stacked segment">
             <div class="field">
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="name" placeholder="Nome" />
+                    <input id="name" type="text" name="name" placeholder="Nome" />
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="envelope icon"></i>
-                    <input type="email" name="email" placeholder="E-mail" />
+                    <input id="email" type="email" name="email" placeholder="E-mail" />
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Senha" />
+                    <input id="password" type="password" name="password" placeholder="Senha" />
                 </div>
             </div>
-            <%-- <div class="field">
+            <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Confirmar senha">
+                    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirmar senha">
                 </div>
-            </div> --%>
+            </div>
+            <s:fielderror />
             <button class="ui fluid large submit button" type="submit" style="background-color: #1EB3FD; color: white">Cadastrar</button>
         </div>
-
-        <div class="ui error message"></div>
 
         </form>
     </div>
     </div>
 </body>
+
 </html>

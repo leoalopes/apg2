@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Standard Meta -->
@@ -16,7 +17,7 @@
 
   <style type="text/css">
     body {
-      background-color: #151517;
+      background-color: #EEEEEE;
     }
     body > .grid {
       height: 100%;
@@ -27,8 +28,19 @@
     .column {
       max-width: 450px;
     }
+    .errorMessage {
+      padding: 0 !important;
+      color: #9F3A38 !important;
+    }
   </style>
 </head>
+
+<script>
+window.onload = function() {
+  document.querySelector('#email').value = '<s:property value="email"/>'
+}
+</script>
+
 <body>
     <div class="ui middle aligned center aligned grid">
     <div class="column">
@@ -37,30 +49,25 @@
                 Acesse sua conta
             </div>
         </h2>
-        <form class="ui large form">
+        <form id="form" class="ui large form" action="loginAction" method="post">
         <div class="ui stacked segment">
             <div class="field">
                 <div class="ui left icon input">
                     <i class="envelope icon"></i>
-                    <input type="text" name="email" placeholder="E-mail">
+                    <input id="email" type="email" name="email" placeholder="E-mail">
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Senha">
+                    <input id="password" type="password" name="password" placeholder="Senha">
                 </div>
             </div>
-            <a href="home"><div class="ui fluid large submit button" style="background-color: #1EB3FD; color: white">Login</div></a>
+            <s:fielderror />
+            <button type="submit" class="ui fluid large submit button" style="background-color: #1EB3FD; color: white">Login</button>
         </div>
-
-        <div class="ui error message"></div>
 
         </form>
-
-        <div class="ui message">
-        Não possui uma conta?  <a href="register">Cadastrar-se</a>
-        </div>
     </div>
     </div>
 </body>

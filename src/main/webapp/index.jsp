@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Standard Meta -->
@@ -93,6 +94,9 @@
           <input type="text" style="color: white" placeholder="Search...">
           <i style="color: white" class="search link icon"></i>
         </div>
+      </div>
+      <div class="item">
+        <s:property value="%{#session.loggedEmail}" />
       </div>
     </div>
 
