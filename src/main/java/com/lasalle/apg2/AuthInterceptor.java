@@ -20,25 +20,30 @@ public class AuthInterceptor implements Interceptor {
     public String intercept(ActionInvocation inv) throws Exception {
         ActionContext context = inv.getInvocationContext();
 
+        Boolean loggedIn = false;
+        SessionMap<String,Object> session = (SessionMap<String,Object>) inv.getInvocationContext().getSession();
+        if(session != null) {
+            String email = (String) session.get("loggedEmail");      
+            if(email != null){                  
+                loggedIn = true;
+            }
+        }
+
         if(
             context.getName().equalsIgnoreCase("login") ||
-            context.getName().equalsIgnoreCase("loginAction") ||
-            context.getName().equalsIgnoreCase("register") ||
-            context.getName().equalsIgnoreCase("registerAction")
+            context.getName().equalsIgnoreCase("loginAction")
         ) {
+            if(loggedIn) {
+                return "home";
+            }
+            
             return inv.invoke();
         }
-
-        SessionMap<String,Object> session = (SessionMap<String,Object>) inv.getInvocationContext().getSession();
-        if(session == null) {
-            return "login";
+        
+        if(loggedIn) {
+            return inv.invoke();
         }
-
-        String email = (String) session.get("loggedEmail");      
-        if(email == null){                  
-            return "login";
-        }
-
-        return inv.invoke();
+        
+        return "login";
     }
 }

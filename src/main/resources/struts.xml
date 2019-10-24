@@ -20,6 +20,7 @@
         <default-interceptor-ref name="auth" />
         <global-results>
             <result name="login" type="redirect">login</result>
+            <result name="home" type="redirect">home</result>
         </global-results>
 
         <action name="">
