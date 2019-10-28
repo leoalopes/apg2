@@ -35,6 +35,9 @@
         <action name="register">
             <result>/register.jsp</result>
         </action>
+        <action name="property">
+            <result>/property.jsp</result>
+        </action>
         <action name="registerAction" class="com.lasalle.apg2.RegisterAction" method="execute">
             <result name="input">/register.jsp</result>
             <result name="success" type="redirect">home</result>

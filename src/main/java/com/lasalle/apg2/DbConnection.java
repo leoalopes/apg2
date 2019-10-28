@@ -8,7 +8,7 @@ public class DbConnection {
 
     public static Connection getConnection() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/apg2", "admin", "12310");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/apg2", "root", "");
         } catch(Exception e) {
             System.out.println("Problem occured while getting connection to the Database = " + e.getMessage());
         }
