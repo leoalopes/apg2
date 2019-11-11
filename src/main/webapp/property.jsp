@@ -58,6 +58,9 @@
   function openSidebar() {
     $('.ui.sidebar').sidebar('toggle')
   }
+  document.onload = function() {
+	  document.querySelector('.ui.checkbox').checkbox();
+  }
 </script>
 
 <body>
@@ -82,7 +85,7 @@
                 <div class="field">
                     <label>Nome</label>
                     <div class="field">
-                        <input type="text" name="name">
+                        <input type="text" name="title">
                     </div>
                 </div>
                 <div class="three fields">
@@ -116,15 +119,47 @@
                     </div>
                 </div>
                 <h4 class="ui dividing header">Informações do dono</h4>
-                <div class="ui segment">
-                    <div class="field">
-                    <div class="ui toggle checkbox">
-                        <input type="checkbox" name="gift" tabindex="0" class="hidden">
-                        <label>Do not include a receipt in the package</label>
-                    </div>
-                    </div>
-                </div>
-                <div class="ui button" tabindex="0">Submit Order</div>
+				<div class="field">
+					<label>Nome</label>
+					<input type="text" name="owner">
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label>Email</label>
+						<input type="text" name="owner_email">
+					</div>
+					<div class="field">
+						<label>Telefone</label>
+						<input type="text" name="owner_phone">
+					</div>
+				</div>
+				<h4 class="ui dividing header">Informações do imóvel</h4>
+				<div class="field">
+					<label>Nome do corretor</label>
+					<input type="text" name="realtor">
+				</div>
+				<br>
+				<div class="three fields">
+					<div class="field">
+						<div class="ui toggle checkbox">
+							<input class="hidden" type="checkbox">
+							<label>Imóvel está no nome do dono</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui toggle checkbox">
+							<input class="hidden" type="checkbox">
+							<label>Imóvel foi ou está financiado</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui toggle checkbox">
+							<input class="hidden" type="checkbox">
+							<label>Dono aceita troca pela propriedade</label>
+						</div>
+					</div>
+				</div>
+                <br><div class="ui button" tabindex="0" style="margin-bottom: 50px">Criar propriedade</div>
             </form>
         </div>
     </div>
