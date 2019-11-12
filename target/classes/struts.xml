@@ -38,12 +38,16 @@
         <action name="property">
             <result>/property.jsp</result>
         </action>
-        <action name="registerAction" class="com.lasalle.apg2.RegisterAction" method="execute">
-            <result name="input">/register.jsp</result>
+        <action name="createPropertyAction" class="com.lasalle.apg2.CreatePropertyAction" method="execute">
+            <result name="input">/property.jsp</result>
             <result name="success" type="redirect">home</result>
         </action>
         <action name="loginAction" class="com.lasalle.apg2.LoginAction" method="execute">
             <result name="input">/login.jsp</result>
+            <result name="success" type="redirect">home</result>
+        </action>
+	<action name="registerAction" class="com.lasalle.apg2.RegisterAction" method="execute">
+            <result name="input">/register.jsp</result>
             <result name="success" type="redirect">home</result>
         </action>
     </package>

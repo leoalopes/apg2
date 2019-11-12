@@ -58,8 +58,8 @@
   function openSidebar() {
     $('.ui.sidebar').sidebar('toggle')
   }
-  document.onload = function() {
-	  document.querySelector('.ui.checkbox').checkbox();
+  window.onload = function() {
+	  $('.ui.checkbox').checkbox()
   }
 </script>
 
@@ -80,7 +80,7 @@
         <h1 class="ui center aligned header">Criando nova propriedade</h1>
 
         <div class="container" style="margin-top: 10px">
-            <form class="ui form">
+            <form class="ui form" method="POST" action="createPropertyAction">
                 <h4 class="ui dividing header">Informações básicas</h4>
                 <div class="field">
                     <label>Nome</label>
@@ -108,17 +108,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="fields">
-                    <div class="twelve wide field">
-                        <label>Endereço</label>
+                <div class="three fields">
+					<div class="field">
+                        <label>Cidade</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div class="field">
+                        <label>Rua e número</label>
                         <input type="text" name="address">
                     </div>
-                    <div class="four wide field">
+                    <div class="field">
                         <label>Preço</label>
-                        <input type="number" name="price">
+                        <input type="text" name="price">
                     </div>
                 </div>
-                <h4 class="ui dividing header">Informações do dono</h4>
+                <h4 class="ui dividing header">Informações do proprietário</h4>
 				<div class="field">
 					<label>Nome</label>
 					<input type="text" name="owner">
@@ -126,11 +130,11 @@
 				<div class="two fields">
 					<div class="field">
 						<label>Email</label>
-						<input type="text" name="owner_email">
+						<input type="text" name="ownerEmail">
 					</div>
 					<div class="field">
 						<label>Telefone</label>
-						<input type="text" name="owner_phone">
+						<input type="text" name="ownerPhone">
 					</div>
 				</div>
 				<h4 class="ui dividing header">Informações do imóvel</h4>
@@ -138,28 +142,29 @@
 					<label>Nome do corretor</label>
 					<input type="text" name="realtor">
 				</div>
-				<br>
-				<div class="three fields">
+				<div class="ui segment">
 					<div class="field">
 						<div class="ui toggle checkbox">
-							<input class="hidden" type="checkbox">
+							<input type="checkbox" name="funded">
+							<label>Imóvel é financiado</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui toggle checkbox">
+							<input type="checkbox" name="trade">
+							<label>Proprietário aceita negociação</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui toggle checkbox">
+							<input type="checkbox" name="owns">
 							<label>Imóvel está no nome do dono</label>
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui toggle checkbox">
-							<input class="hidden" type="checkbox">
-							<label>Imóvel foi ou está financiado</label>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui toggle checkbox">
-							<input class="hidden" type="checkbox">
-							<label>Dono aceita troca pela propriedade</label>
-						</div>
-					</div>
 				</div>
-                <br><div class="ui button" tabindex="0" style="margin-bottom: 50px">Criar propriedade</div>
+                <br>
+				<button class="ui submit button" style="background-color: #2185D0; color: white; margin-bottom: 50px">Criar propriedade</button>
+			<s:fielderror />
             </form>
         </div>
     </div>
