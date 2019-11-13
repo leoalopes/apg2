@@ -46,9 +46,10 @@
             <result name="input">/login.jsp</result>
             <result name="success" type="redirect">home</result>
         </action>
-	<action name="registerAction" class="com.lasalle.apg2.RegisterAction" method="execute">
+	    <action name="registerAction" class="com.lasalle.apg2.RegisterAction" method="execute">
             <result name="input">/register.jsp</result>
             <result name="success" type="redirect">home</result>
         </action>
+        <action name="logout"></action>
     </package>
 </struts>

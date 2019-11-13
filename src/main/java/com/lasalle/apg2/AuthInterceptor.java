@@ -29,6 +29,11 @@ public class AuthInterceptor implements Interceptor {
             }
         }
 
+        if(context.getName().equalsIgnoreCase("logout")) {
+            session.invalidate();
+            return "login";
+        }
+
         if(
             context.getName().equalsIgnoreCase("login") ||
             context.getName().equalsIgnoreCase("loginAction")

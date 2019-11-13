@@ -28,7 +28,10 @@
     .column {
       max-width: 450px;
     }
-
+    .menu {
+      height: 50px;
+      border-bottom: 2px solid #1EB3FD !important;
+    }
     .errorMessage {
       padding: 0 !important;
       color: #9F3A38 !important;
@@ -60,6 +63,20 @@ window.onload = function() {
       <a href="home" class="item">
         Imobiliária
       </a>
+      <div class="right menu">
+        <div class="item">
+          <a href="register" style="margin-left: 5px">
+            <i class="user plus icon"></i>
+          </a>
+        </div>
+        <div class="item">
+          <s:property value="%{#session.loggedEmail}" />
+          <a href="logout" style="margin-left: 10px">
+            <i class="user times icon"></i>
+          </a>
+        </div>
+        <div class="item" style="margin-left: 5px;"></div>
+      </div>
     </div>
     <div class="ui middle aligned center aligned grid">
     <div class="column">

@@ -50,6 +50,10 @@
   .location {
     margin-bottom: 15px;
   }
+  .errorMessage {
+    padding: 0 !important;
+    color: #9F3A38 !important;
+  }
   </style>
 
 </head>
@@ -60,19 +64,44 @@
   }
   window.onload = function() {
 	  $('.ui.checkbox').checkbox()
+    document.querySelector('#title').value = '<s:property value="title"/>'
+    document.querySelector('#neighborhood').value = '<s:property value="neighborhood"/>'
+    document.querySelector('#state').value = '<s:property value="state"/>'
+    document.querySelector('#country').value = '<s:property value="country"/>'
+    document.querySelector('#city').value = '<s:property value="city"/>'
+    document.querySelector('#address').value = '<s:property value="address"/>'
+    document.querySelector('#price').value = '<s:property value="price"/>'
+    document.querySelector('#owner').value = '<s:property value="owner"/>'
+    document.querySelector('#ownerEmail').value = '<s:property value="ownerEmail"/>'
+    document.querySelector('#ownerPhone').value = '<s:property value="ownerPhone"/>'
+    document.querySelector('#realtor').value = '<s:property value="realtor"/>'
+    // document.querySelector('#funded').checked = '<s:property value="funded"/>'
+    // document.querySelector('#trade').checked = '<s:property value="trade"/>'
+    // document.querySelector('#owns').checked = '<s:property value="owns"/>'
   }
 </script>
 
 <body>
 
     <div class="ui fixed inverted first menu">
-      <div class="item" style="margin-left: 5px; cursor: pointer;">
+      <div class="item" style="margin-left: 5px;">
       </div>
       <a href="home" class="item">
         Imobiliária
       </a>
-      <div class="item">
-        <s:property value="%{#session.loggedEmail}" />
+      <div class="right menu">
+        <div class="item">
+          <a href="register" style="margin-left: 5px">
+            <i class="user plus icon"></i>
+          </a>
+        </div>
+        <div class="item">
+          <s:property value="%{#session.loggedEmail}" />
+          <a href="logout" style="margin-left: 10px">
+            <i class="user times icon"></i>
+          </a>
+        </div>
+        <div class="item" style="margin-left: 5px;"></div>
       </div>
     </div>
 
@@ -85,86 +114,86 @@
                 <div class="field">
                     <label>Nome</label>
                     <div class="field">
-                        <input type="text" name="title">
+                        <input type="text" id="title" name="title">
                     </div>
                 </div>
                 <div class="three fields">
                     <div class="field">
                         <label>Bairro</label>
                         <div class="field">
-                            <input type="text" name="neighborhood">
+                            <input type="text" id="neighborhood" name="neighborhood">
                         </div>
                     </div>
                     <div class="field">
                         <label>Estado</label>
                         <div class="field">
-                            <input type="text" name="state">
+                            <input type="text" id="state" name="state">
                         </div>
                     </div>
                     <div class="field">
                         <label>País</label>
                         <div class="field">
-                            <input type="text" name="country">
+                            <input type="text" id="country" name="country">
                         </div>
                     </div>
                 </div>
                 <div class="three fields">
 					<div class="field">
                         <label>Cidade</label>
-                        <input type="text" name="city">
+                        <input type="text" id="city" name="city">
                     </div>
                     <div class="field">
                         <label>Rua e número</label>
-                        <input type="text" name="address">
+                        <input type="text" id="address" name="address">
                     </div>
                     <div class="field">
                         <label>Preço</label>
-                        <input type="text" name="price">
+                        <input type="text" id="price" name="price">
                     </div>
                 </div>
                 <h4 class="ui dividing header">Informações do proprietário</h4>
 				<div class="field">
 					<label>Nome</label>
-					<input type="text" name="owner">
+					<input type="text" id="owner" name="owner">
 				</div>
 				<div class="two fields">
 					<div class="field">
 						<label>Email</label>
-						<input type="text" name="ownerEmail">
+						<input type="text" id="ownerEmail" name="ownerEmail">
 					</div>
 					<div class="field">
 						<label>Telefone</label>
-						<input type="text" name="ownerPhone">
+						<input type="text" id="ownerPhone" name="ownerPhone">
 					</div>
 				</div>
 				<h4 class="ui dividing header">Informações do imóvel</h4>
 				<div class="field">
 					<label>Nome do corretor</label>
-					<input type="text" name="realtor">
+					<input type="text" id="realtor" name="realtor">
 				</div>
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui toggle checkbox">
-							<input type="checkbox" name="funded">
+							<input type="checkbox" id="funded" name="funded">
 							<label>Imóvel é financiado</label>
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui toggle checkbox">
-							<input type="checkbox" name="trade">
-							<label>Proprietário aceita negociação</label>
+							<input type="checkbox" id="owns" name="owns">
+							<label>Imóvel está no nome do dono</label>
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui toggle checkbox">
-							<input type="checkbox" name="owns">
-							<label>Imóvel está no nome do dono</label>
+							<input type="checkbox" id="trade" name="trade">
+							<label>Proprietário aceita negociação</label>
 						</div>
 					</div>
 				</div>
+        <s:fielderror />
                 <br>
 				<button class="ui submit button" style="background-color: #2185D0; color: white; margin-bottom: 50px">Criar propriedade</button>
-			<s:fielderror />
             </form>
         </div>
     </div>

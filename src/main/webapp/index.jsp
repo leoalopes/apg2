@@ -50,6 +50,25 @@
   .location {
     margin-bottom: 15px;
   }
+  .filter-btn {
+    background-color: #1EB3FD !important;
+    color: white !important;
+    width: 227px !important;
+    left: 16px;
+    top: 15px;
+  }
+  .floating-button {
+    background-color: #1EB3FD !important;
+    color: white !important;
+    position: fixed;
+    bottom: 25px;
+    right: 100px;
+    box-shadow: 0;
+    transition: all 2s !important;
+  }
+  .floating-button:hover{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+  }
   </style>
 
 </head>
@@ -58,12 +77,15 @@
   function openSidebar() {
     $('.ui.sidebar').sidebar('toggle')
   }
+  window.onload = function() {
+	  $('.ui.checkbox').checkbox()
+  }
 </script>
 
 <body>
 
   <div class="ui sidebar inverted vertical menu">
-    <h2 class="ui center aligned header" style="margin-top: 10px; color: #1BE3FD">Filtros</h1><br>
+    <h2 class="ui center aligned header" style="margin-top: 10px; color: #1EB3FD;"><b>Filtros</b></h2>
     <div class="item">
       <div style="color: #1EB3FD" class="ui center aligned">Endereço</div><br>
       <div class="ui input">
@@ -72,14 +94,46 @@
     </div>
     <div class="item">
       <div class="ui input" style="display: flex; align-items: center;">
-        <span style="color: #1eb3fd">Preço mínimo</span> <input type="number" value="250" placeholder="R$">
+        <span style="color: #1eb3fd">Preço mínimo</span> <input type="number" placeholder="R$">
       </div>
     </div>
     <div class="item">
       <div class="ui input" style="display: flex; align-items: center;">
-        <span style="color: #1eb3fd">Preço máximo</span> <input type="number" value="5000" placeholder="R$">
+        <span style="color: #1eb3fd">Preço máximo</span> <input type="number" placeholder="R$">
       </div>
     </div>
+    <div class="item">
+      <div style="color: #1EB3FD" class="ui center aligned">Corretor</div><br>
+      <div class="ui input">
+        <input type="text">
+      </div>
+    </div>
+    <div class="item">
+      <div style="color: #1EB3FD" class="ui center aligned">Dono</div><br>
+      <div class="ui input">
+        <input type="text">
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui segment">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" id="funded" name="funded">
+          <label>Financiado</label>
+        </div>
+        <div class="ui toggle checkbox" style="margin-top: 10px">
+          <input type="checkbox" id="owns" name="owns">
+          <label>No nome do dono</label>
+        </div>
+        <div class="ui toggle checkbox" style="margin-top: 10px">
+          <input type="checkbox" id="trade" name="trade">
+          <label>Negociável</label>
+        </div>
+      </div>
+    </div>
+    <button class="ui right labeled icon button filter-btn">
+      <i class="right search icon"></i>
+      Filtrar
+    </button>
   </div>
   <div class="dimmed pusher">
     <div class="ui fixed inverted first menu">
@@ -95,13 +149,24 @@
           <i style="color: white" class="search link icon"></i>
         </div>
       </div>
-      <div class="item">
-        <s:property value="%{#session.loggedEmail}" />
+      <div class="right menu">
+        <div class="item">
+          <a href="register" style="margin-left: 5px">
+            <i class="user plus icon"></i>
+          </a>
+        </div>
+        <div class="item">
+          <s:property value="%{#session.loggedEmail}" />
+          <a href="logout" style="margin-left: 10px">
+            <i class="user times icon"></i>
+          </a>
+        </div>
+        <div class="item" style="margin-left: 5px;"></div>
       </div>
     </div>
 
     <div class="container">
-      <h1 class="ui center aligned header">Explore imóveis próximos de você</h1>
+      <h1 class="ui center aligned header">Explore os imóveis</h1>
 
       <div class="grid">
 
@@ -233,6 +298,9 @@
         
       </div>
     </div>
+    <a href="property"><button class="circular ui icon big button floating-button">
+      <i class="icon plus"></i>
+    </button></a>
   </div>
 
 </body>

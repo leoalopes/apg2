@@ -54,6 +54,15 @@ public class CreatePropertyAction extends ActionSupport {
         return SUCCESS;
     }
 
+    @Override
+    public void validate() {
+        try {
+            Float.parseFloat(this.price);
+        } catch(Exception e) {
+            addFieldError("price", "Preço deve ser um número");
+        }
+    }
+
     public String getTitle() {
         return this.title;
     }
