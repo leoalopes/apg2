@@ -55,7 +55,7 @@
     color: white !important;
     width: 227px !important;
     left: 16px;
-    top: 15px;
+    top: 7px;
   }
   .floating-button {
     background-color: #1EB3FD !important;
@@ -85,8 +85,11 @@
 <body>
 
   <div class="ui sidebar inverted vertical menu">
-    <h2 class="ui center aligned header" style="margin-top: 10px; color: #1EB3FD;"><b>Filtros</b></h2>
-    <div class="item">
+    <button class="ui right labeled icon button filter-btn">
+      <i class="right search icon"></i>
+      Filtrar
+    </button>
+    <div class="item" style="margin-top: 20px">
       <div style="color: #1EB3FD" class="ui center aligned">Endereço</div><br>
       <div class="ui input">
         <input type="text">
@@ -130,10 +133,6 @@
         </div>
       </div>
     </div>
-    <button class="ui right labeled icon button filter-btn">
-      <i class="right search icon"></i>
-      Filtrar
-    </button>
   </div>
   <div class="dimmed pusher">
     <div class="ui fixed inverted first menu">
@@ -145,7 +144,7 @@
       </a>
       <div class="item">
         <div class="ui transparent icon input">
-          <input type="text" style="color: white" placeholder="Search...">
+          <input type="text" style="color: white" placeholder="Pesquisar...">
           <i style="color: white" class="search link icon"></i>
         </div>
       </div>
@@ -181,117 +180,13 @@
                 <span class="date">R$ 250</span>
               </div>
             </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
-            </div>
-          </div>
-        </div>
-
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
-              </div>
-            </div>
-            <div class="extra content">
-              Leonardo Lopes<br>
-              (51) 99999-9999
+            <div class="extra content" style="padding-bottom: 0">
+				Leonardo Lopes<br>
+				(51) 99999-9999
+				<div class="ui two buttons">
+					<div class="ui basic button" style="color: #1EB3FD !important;">Editar</div>
+					<div class="ui basic button" style="color: #9F3A38 !important;">Remover</div>
+				</div>
             </div>
           </div>
         </div>
