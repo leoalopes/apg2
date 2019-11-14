@@ -6,6 +6,9 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.PreparedStatement;
 
+import java.util.Base64;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 
@@ -24,24 +27,26 @@ public class CreatePropertyAction extends ActionSupport {
     private Boolean funded = false;
     private Boolean trade = false;
 	private Boolean owns = false;
+    private String image;
 
     public String execute() {
-        try {            
-            PreparedStatement preparedStatement = DbConnection.getConnection().prepareStatement("INSERT INTO property(title, neighborhood, state, country, city, address, price, owner, owner_email, owner_phone, realtor, funded, trade, owns) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        try {
+            PreparedStatement preparedStatement = DbConnection.getConnection().prepareStatement("INSERT INTO property(title, image, neighborhood, state, country, city, address, price, owner, owner_email, owner_phone, realtor, funded, trade, owns) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             preparedStatement.setString(1, this.title);
-            preparedStatement.setString(2, this.neighborhood);
-            preparedStatement.setString(3, this.state);
-			preparedStatement.setString(4, this.country);
-			preparedStatement.setString(5, this.city);
-            preparedStatement.setString(6, this.address);
-			preparedStatement.setFloat(7, Float.parseFloat(this.price));
-            preparedStatement.setString(8, this.owner);
-            preparedStatement.setString(9, this.ownerEmail);
-			preparedStatement.setString(10, this.ownerPhone);
-			preparedStatement.setString(11, this.realtor);
-			preparedStatement.setBoolean(12, this.funded);
-			preparedStatement.setBoolean(13, this.trade);
-			preparedStatement.setBoolean(14, this.owns);
+            preparedStatement.setString(2, this.image);
+            preparedStatement.setString(3, this.neighborhood);
+            preparedStatement.setString(4, this.state);
+			preparedStatement.setString(5, this.country);
+			preparedStatement.setString(6, this.city);
+            preparedStatement.setString(7, this.address);
+			preparedStatement.setFloat(8, Float.parseFloat(this.price));
+            preparedStatement.setString(9, this.owner);
+            preparedStatement.setString(10, this.ownerEmail);
+			preparedStatement.setString(11, this.ownerPhone);
+			preparedStatement.setString(12, this.realtor);
+			preparedStatement.setBoolean(13, this.funded);
+			preparedStatement.setBoolean(14, this.trade);
+			preparedStatement.setBoolean(15, this.owns);
             preparedStatement.execute();
         } catch(Exception e) {
 			StringWriter sw = new StringWriter();
@@ -173,6 +178,14 @@ public class CreatePropertyAction extends ActionSupport {
 
     public void setOwns(Boolean owns) {
         this.owns = owns;
+    }
+
+    public String getImage() {
+        return this.image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     //@Override

@@ -77,6 +77,24 @@
   function openSidebar() {
     $('.ui.sidebar').sidebar('toggle')
   }
+  var properties = '<s:property value="result" />'
+  function editProperty(e) {
+    alert(e.target.id);
+  }
+  function deleteProperty(e) {
+    $('.loader').addClass("active")
+    $.ajax({
+      url: "deletePropertyAction",
+      type: "post",
+      data: {
+        id: Number(e.target.id)
+      }
+    })
+    .done(function() {
+      $('.loader').removeClass("active")
+      $('#location-' + e.target.id).remove()
+    })
+  }
   window.onload = function() {
 	  $('.ui.checkbox').checkbox()
   }
@@ -135,6 +153,7 @@
     </div>
   </div>
   <div class="dimmed pusher">
+    <div class="ui loader"></div>
     <div class="ui fixed inverted first menu">
       <div class="item" onclick="openSidebar()" style="margin-left: 5px; cursor: pointer;">
         <i class="bars icon"></i>
@@ -169,28 +188,31 @@
 
       <div class="grid">
 
-        <div class="location" style="width: 220px">
-          <div class="ui link card">
-            <div class="image">
-              <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large">
-            </div>
-            <div class="content">
-              <a class="header">Lugar daora</a>
-              <div class="meta">
-                <span class="date">R$ 250</span>
+        <s:iterator  value="result">  
+          <div id="location-<s:property value='id' />" class="location" style="width: 220px">
+            <div class="ui link card">
+              <div class="image">
+                <%-- <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=xx_large"> --%>
+                <img src="<s:property value='image' />">
+              </div>
+              <div class="content">
+                <a class="header"><s:property value="title" /></a>
+                <div class="meta">
+                  <span class="date">R$ <s:property value="price" /></span>
+                </div>
+              </div>
+              <div class="extra content" style="padding-bottom: 0">
+                <s:property value="owner" /><br>
+                <s:property value="owner_phone" />
+                <div class="ui two buttons">
+                  <div id="<s:property value='id' />" class="ui basic button" style="color: #1EB3FD !important;" onclick="editProperty(event)">Editar</div>
+                  <div id="<s:property value='id' />" class="ui basic button" style="color: #9F3A38 !important;" onclick="deleteProperty(event)">Remover</div>
+                </div>
               </div>
             </div>
-            <div class="extra content" style="padding-bottom: 0">
-				Leonardo Lopes<br>
-				(51) 99999-9999
-				<div class="ui two buttons">
-					<div class="ui basic button" style="color: #1EB3FD !important;">Editar</div>
-					<div class="ui basic button" style="color: #9F3A38 !important;">Remover</div>
-				</div>
-            </div>
           </div>
-        </div>
-        
+        </s:iterator>  
+
       </div>
     </div>
     <a href="property"><button class="circular ui icon big button floating-button">

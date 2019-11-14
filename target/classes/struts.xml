@@ -26,9 +26,6 @@
         <action name="">
             <result type="redirect">login</result>
         </action>
-        <action name="home">
-            <result>/index.jsp</result>
-        </action>
         <action name="login">
             <result>/login.jsp</result>
         </action>
@@ -37,6 +34,12 @@
         </action>
         <action name="property">
             <result>/property.jsp</result>
+        </action>
+        <action name="home" class="com.lasalle.apg2.GetPropertiesAction" method="execute">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="deletePropertyAction" class="com.lasalle.apg2.DeletePropertyAction" method="execute">
+            <result type="redirect">home</result>
         </action>
         <action name="createPropertyAction" class="com.lasalle.apg2.CreatePropertyAction" method="execute">
             <result name="input">/property.jsp</result>

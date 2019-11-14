@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="three fields">
-					<div class="field">
+					          <div class="field">
                         <label>Cidade</label>
                         <input type="text" id="city" name="city">
                     </div>
@@ -167,6 +167,10 @@
 					</div>
 				</div>
 				<h4 class="ui dividing header">Informações do imóvel</h4>
+        <div class="field">
+					<label>URL da imagem</label>
+					<input type="text" id="image" name="image">
+				</div>
 				<div class="field">
 					<label>Nome do corretor</label>
 					<input type="text" id="realtor" name="realtor">
