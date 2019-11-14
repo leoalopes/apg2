@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Nov-2019 às 04:29
+-- Generation Time: 14-Nov-2019 às 06:53
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.2.16
 
@@ -32,12 +32,14 @@ CREATE TABLE `property` (
   `id` int(11) NOT NULL,
   `address` varchar(255) COLLATE utf8_bin NOT NULL,
   `title` varchar(255) COLLATE utf8_bin NOT NULL,
-  `district` varchar(255) COLLATE utf8_bin NOT NULL,
+  `image` text COLLATE utf8_bin NOT NULL,
+  `neighborhood` varchar(255) COLLATE utf8_bin NOT NULL,
   `city` varchar(255) COLLATE utf8_bin NOT NULL,
+  `state` varchar(120) COLLATE utf8_bin NOT NULL,
   `country` varchar(255) COLLATE utf8_bin NOT NULL,
   `price` float NOT NULL,
   `realtor` varchar(255) COLLATE utf8_bin NOT NULL,
-  `owner` varbinary(255) NOT NULL,
+  `owner` varchar(255) COLLATE utf8_bin NOT NULL,
   `owner_email` varchar(255) COLLATE utf8_bin NOT NULL,
   `owner_phone` varchar(15) COLLATE utf8_bin NOT NULL,
   `funded` tinyint(1) NOT NULL,
@@ -98,13 +100,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
