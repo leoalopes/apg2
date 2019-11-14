@@ -1,3 +1,2 @@
-com\lasalle\apg2\DeletePropertyAction.class
-com\lasalle\apg2\Property.class
-com\lasalle\apg2\GetPropertiesAction.class
+com/lasalle/apg2/EditPropertyAction.class
+com/lasalle/apg2/StartEditingPropertyAction.class

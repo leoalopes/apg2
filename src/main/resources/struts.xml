@@ -38,6 +38,14 @@
         <action name="home" class="com.lasalle.apg2.GetPropertiesAction" method="execute">
             <result name="success">/index.jsp</result>
         </action>
+        <action name="edit-property" class="com.lasalle.apg2.StartEditingPropertyAction" method="execute">
+            <result name="success">/edit-property.jsp</result>
+            <result name="input" type="redirect">home</result>
+        </action>
+        <action name="editPropertyAction" class="com.lasalle.apg2.EditPropertyAction" method="execute">
+            <result name="input">/edit-property.jsp</result>
+            <result name="success" type="redirect">home</result>
+        </action>
         <action name="deletePropertyAction" class="com.lasalle.apg2.DeletePropertyAction" method="execute">
             <result type="redirect">home</result>
         </action>

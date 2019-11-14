@@ -160,24 +160,36 @@ public class CreatePropertyAction extends ActionSupport {
         return this.funded;
     }
 
-    public void setFunded(Boolean funded) {
-        this.funded = funded;
+    public void setFunded(String funded) {
+        if(funded.equals("on")) {
+            this.funded = true;
+        } else {
+            this.funded = false;
+        }
     }
 
 	public Boolean isTrade() {
         return this.trade;
     }
 
-    public void setTrade(Boolean trade) {
-        this.trade = trade;
+    public void setTrade(String trade) {
+        if(trade.equals("on")) {
+            this.trade = true;
+        } else {
+            this.trade = false;
+        }
     }
 
 	public Boolean isOwns() {
         return this.owns;
     }
 
-    public void setOwns(Boolean owns) {
-        this.owns = owns;
+    public void setOwns(String owns) {
+        if(owns.equals("on")) {
+            this.owns = true;
+        } else {
+            this.owns = false;
+        }
     }
 
     public String getImage() {

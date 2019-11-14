@@ -196,7 +196,7 @@
 					</div>
 				</div>
         <s:fielderror />
-                <br>
+        <br>
 				<button class="ui submit button" style="background-color: #2185D0; color: white; margin-bottom: 50px">Criar propriedade</button>
             </form>
         </div>

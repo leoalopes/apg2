@@ -1,0 +1,12 @@
+[Error - 6:52:32 PM] Error while validating file:///root/Desktop/apg2/src/main/webapp/index.jsp: Debug Failure.
+Error: Debug Failure.
+    at walk (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:92413:38)
+    at visitNode (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17007:24)
+    at Object.forEachChild (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17213:24)
+    at walk (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:92417:24)
+    at visitNode (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17007:24)
+    at Object.forEachChild (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17224:21)
+    at walk (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:92417:24)
+    at walkArray (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:92479:25)
+    at visitNodes (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17012:24)
+    at Object.forEachChild (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typescript.js:17196:21)

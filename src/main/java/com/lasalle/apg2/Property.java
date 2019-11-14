@@ -14,10 +14,12 @@ public class Property {
     public String owner;
     public String owner_email;
     public String owner_phone;
-    public Boolean funded;
-    public Boolean owns;
-    public Boolean trade;
-    public Boolean not_updated;
+    public String funded;
+    public String owns;
+    public String trade;
+    public String not_updated;
+
+    public Property() {}
 
     public Property(
         int id,
@@ -29,13 +31,14 @@ public class Property {
         String state,
         String country,
         float price,
+        String realtor,
         String owner,
         String owner_email,
         String owner_phone,
-        Boolean funded,
-        Boolean owns,
-        Boolean trade,
-        Boolean not_updated
+        String funded,
+        String owns,
+        String trade,
+        String not_updated
     ) {
         this.id = id;
         this.address = address;
@@ -46,6 +49,7 @@ public class Property {
         this.state = state;
         this.country = country;
         this.price = price;
+        this.realtor = realtor;
         this.owner = owner;
         this.owner_email = owner_email;
         this.owner_phone = owner_phone;
